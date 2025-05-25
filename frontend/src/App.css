@@ -1,0 +1,201 @@
+/* 主应用样式 */
+.App {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* 投票选项卡片样式 */
+.vote-options-card .ant-card-head {
+  background: linear-gradient(135deg, #f6f9fc 0%, #e9f4fd 100%);
+  border-bottom: 1px solid #e8f4fd;
+}
+
+.vote-options-card .ant-card-body {
+  padding: 24px;
+}
+
+/* 投票选项样式 */
+.vote-option {
+  transition: all 0.3s ease;
+  border: 1px solid #d9d9d9;
+  cursor: pointer;
+}
+
+.vote-option:hover:not(.ant-card-disabled) {
+  border-color: #1890ff;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.vote-option.selected {
+  border-color: #1890ff;
+  background-color: #f6ffed;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.2);
+}
+
+.vote-option-content {
+  width: 100%;
+}
+
+.option-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 图表容器样式 */
+.vote-chart-container {
+  position: relative;
+  width: 100%;
+}
+
+.vote-chart-container .echarts-for-react {
+  width: 100% !important;
+}
+
+/* 连接状态指示器样式 */
+.connection-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: linear-gradient(90deg, #fafafa 0%, #f0f2f5 100%);
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.connection-status.connected {
+  background: linear-gradient(90deg, #f6ffed 0%, #f0f9e8 100%);
+  border-color: #b7eb8f;
+}
+
+.connection-status.disconnected {
+  background: linear-gradient(90deg, #fff2e8 0%, #ffece0 100%);
+  border-color: #ffadd2;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .App .ant-layout-content {
+    padding: 16px;
+  }
+  
+  .vote-options-card .ant-card-body {
+    padding: 16px;
+  }
+  
+  .connection-status {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .vote-option-content .option-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .App .ant-layout-header {
+    padding: 0 16px;
+  }
+  
+  .App .ant-layout-content {
+    padding: 12px;
+  }
+  
+  .vote-chart-container {
+    padding: 0;
+  }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vote-option {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* 自定义滚动条（WebKit） */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* 禁用状态样式 */
+.ant-radio-wrapper.ant-radio-wrapper-disabled {
+  cursor: not-allowed;
+}
+
+.vote-option.ant-card-disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* 加载状态样式 */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* 成功提示样式 */
+.vote-success-indicator {
+  color: #52c41a;
+  font-weight: 500;
+}
+
+/* 进度条自定义样式 */
+.ant-progress-line {
+  margin-bottom: 0 !important;
+}
+
+.ant-progress-bg {
+  border-radius: 4px;
+}
+
+/* 卡片阴影效果 */
+.vote-section-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.vote-section-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+} 
